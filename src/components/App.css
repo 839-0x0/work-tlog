@@ -1,0 +1,13 @@
+input {
+    padding: auto;
+    margin: 3px 5px;
+}
+
+button {
+    padding: auto;
+    margin: 3px 5px;
+}
+
+.timer {
+    clear: both;
+}
