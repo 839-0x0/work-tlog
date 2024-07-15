@@ -34,12 +34,12 @@ function TimerItem(props) {
 
     return (
         <>
-        <div class="item" onClick={toggleAccordion}>
+        <div className={`item ${isRunning ? 'running' : ''}`} onClick={toggleAccordion}>
             <span>{itemName}</span> <TimerButton isRunning={isRunning} toggleTimer={toggleTimer} /> {"total:" + new Date(calculateTotalTime()).toISOString().substr(11, 8)}
             {props.isRemovable && <input type="image" src="../public/assets/images/close.png" alt="×" class="close-button" onClick={() => props.handleRemoveClick()}></input>}
         </div>
         {isAccordionOpen && (
-            <div>
+            <div class="log-detail">
                 {timeSets.map((set, index) => {
                     // 停止時間がある場合のみTimerComponentを表示
                     if (set.stopTime) {
