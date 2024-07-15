@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
+
 import TimerItem from './TimerItem';
+import InputWithAddButton from './InputWithAddButton';
+
 import './App.css';
 
 function App () {
     const [itemName, setItemName] = useState('');
     const [items, setItems] = useState([]);
+    const [detaultItem] = useState(['ミーティング','アラート・問い合わせ調査']);
 
     const handleInputChange = (event) => {
         setItemName(event.target.value);
@@ -17,8 +21,16 @@ function App () {
 
     return (
         <div>
-            <input type="text" value={itemName} onChange={handleInputChange} />
-            <button onClick={handleAddClick}>追加</button>
+            <InputWithAddButton 
+                itemName={itemName} 
+                handleInputChange={handleInputChange} 
+                handleAddClick={handleAddClick} 
+            />
+            {detaultItem.map((item, index) => (
+                <div key={index}>
+                    <TimerItem itemName={item} />
+                </div>
+            ))}
             {items.map((item, index) => (
                 <div key={index}>
                     <TimerItem itemName={item} />
