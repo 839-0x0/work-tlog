@@ -1,5 +1,8 @@
 import React, {useState} from 'react';
+
 import TimerItem from './TimerItem';
+import InputWithAddButton from './InputWithAddButton';
+
 import './App.css';
 
 function App () {
@@ -17,8 +20,11 @@ function App () {
 
     return (
         <div>
-            <input type="text" value={itemName} onChange={handleInputChange} />
-            <button onClick={handleAddClick}>追加</button>
+            <InputWithAddButton 
+                itemName={itemName} 
+                handleInputChange={handleInputChange} 
+                handleAddClick={handleAddClick} 
+            />
             {items.map((item, index) => (
                 <div key={index}>
                     <TimerItem itemName={item} />
