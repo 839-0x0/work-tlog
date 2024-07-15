@@ -4,7 +4,7 @@ function InputWithAddButton({ itemName, handleInputChange, handleAddClick }) {
     return (
         <div>
             <input type="text" value={itemName} onChange={handleInputChange} />
-            <button onClick={handleAddClick}>追加</button>
+            <button onClick={handleAddClick} disabled={!itemName.trim()}>追加</button>
         </div>
     );
 }
