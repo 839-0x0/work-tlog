@@ -34,8 +34,9 @@ function TimerItem(props) {
 
     return (
         <>
-        <div onClick={toggleAccordion}>
+        <div class="item" onClick={toggleAccordion}>
             <span>{itemName}</span> <TimerButton isRunning={isRunning} toggleTimer={toggleTimer} /> {"total:" + new Date(calculateTotalTime()).toISOString().substr(11, 8)}
+            {props.isRemovable && <input type="image" src="../public/assets/images/close.png" alt="×" class="close-button" onClick={() => props.handleRemoveClick()}></input>}
         </div>
         {isAccordionOpen && (
             <div>
