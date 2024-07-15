@@ -14,6 +14,10 @@ button {
     margin: 3px 5px;
 }
 
+.input-task {
+    width: 45%;
+}
+
 .item {
     display: flex;
     align-items: center;
