@@ -19,6 +19,10 @@ function App () {
         setItemName('');
     };
 
+    const handleRemoveItem = (indexToRemove) => {
+        setItems(items.filter((_, index) => index !== indexToRemove));
+    };
+
     return (
         <div>
             <InputWithAddButton 
@@ -28,12 +32,12 @@ function App () {
             />
             {detaultItem.map((item, index) => (
                 <div key={index}>
-                    <TimerItem itemName={item} />
+                    <TimerItem itemName={item} isRemovable={false}/>
                 </div>
             ))}
             {items.map((item, index) => (
                 <div key={index}>
-                    <TimerItem itemName={item} />
+                    <TimerItem itemName={item} isRemovable={true} handleRemoveClick={() => handleRemoveItem(index)}/>
                 </div>
             ))}
         </div>

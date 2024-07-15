@@ -8,6 +8,17 @@ button {
     margin: 3px 5px;
 }
 
+.item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.close-button {
+    margin-left: auto;
+    display: flex;
+}
+
 .timer {
     clear: both;
 }
